@@ -1,4 +1,4 @@
-name: Build-Docker
+name: Build-Dockerhub
 on:
   workflow_call:
     inputs:
@@ -12,7 +12,7 @@ on:
         required: true
 
 jobs:
-  build:
+  build-dockerhub:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
