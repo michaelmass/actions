@@ -1,0 +1,9 @@
+name: Tilt Setup
+description: Setup tilt cli
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install tilt
+      shell: bash
+      run: curl -k -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
