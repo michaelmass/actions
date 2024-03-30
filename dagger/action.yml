@@ -23,4 +23,4 @@ runs:
         INFISICAL_WORKSPACE_ID: ${{ inputs.infisical-workspace-id }}
       with:
         verb: run
-        args: ./bin/dagger run deno run -A ${{ inputs.source }}
+        args: deno run -A ${{ inputs.source }}
