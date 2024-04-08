@@ -1,0 +1,13 @@
+name: Ensure No Uncommitted Changes
+description: Ensure that there are no uncommitted changes in the repository
+
+runs:
+  using: 'composite'
+  steps:
+    - name: No uncommitted changes
+      shell: bash
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "There are uncommitted changes in the repository"
+          exit 1
+        fi
