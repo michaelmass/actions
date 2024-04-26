@@ -1,6 +1,8 @@
 name: Ensure No Uncommitted Changes
 description: Ensure that there are no uncommitted changes in the repository
 
+# TODO? test this script
+
 runs:
   using: 'composite'
   steps:
