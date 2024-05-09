@@ -1,8 +1,6 @@
 name: Ensure No Uncommitted Changes
 description: Ensure that there are no uncommitted changes in the repository
 
-# TODO? test this script
-
 runs:
   using: 'composite'
   steps:
@@ -10,6 +8,7 @@ runs:
       shell: bash
       run: |
         if [[ -n $(git status --porcelain) ]]; then
+          git status --porcelain
           echo "There are uncommitted changes in the repository"
           exit 1
         fi
