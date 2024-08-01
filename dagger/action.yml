@@ -22,5 +22,6 @@ runs:
         INFISICAL_TOKEN: ${{ inputs.infisical-token }}
         INFISICAL_WORKSPACE_ID: ${{ inputs.infisical-workspace-id }}
       with:
+        version: '0.9.6'
         verb: run
         args: deno run -A ${{ inputs.source }}
