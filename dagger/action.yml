@@ -11,6 +11,9 @@ inputs:
   infisical-workspace-id:
     description: 'Infisical workspace id'
     required: true
+  infisical-environment:
+    description: 'Infisical environment to get the secrets from'
+    required: true
 
 runs:
   using: 'composite'
@@ -21,6 +24,7 @@ runs:
       env:
         INFISICAL_TOKEN: ${{ inputs.infisical-token }}
         INFISICAL_WORKSPACE_ID: ${{ inputs.infisical-workspace-id }}
+        INFISICAL_ENVIRONMENT: ${{ inputs.infisical-environment }}
       with:
         version: '0.9.6'
         verb: run
