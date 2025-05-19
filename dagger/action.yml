@@ -19,7 +19,7 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v4
-    - uses: denoland/setup-deno@v1
+    - uses: denoland/setup-deno@v2
     - uses: dagger/dagger-for-github@v5
       env:
         INFISICAL_TOKEN: ${{ inputs.infisical-token }}

@@ -11,7 +11,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - uses: denoland/setup-deno@v1
+    - uses: denoland/setup-deno@v2
     - name: Run stodo
       shell: bash
       run: deno run --allow-run=rg,git,jq jsr:@michaelmass/stodo/cli search --format pretty -e --jq "[.[] | select(.priority.value >= ${{ inputs.priority }})]"
