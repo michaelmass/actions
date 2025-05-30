@@ -20,12 +20,12 @@ runs:
   steps:
     - uses: actions/checkout@v4
     - uses: denoland/setup-deno@v2
-    - uses: dagger/dagger-for-github@v5
+    - uses: dagger/dagger-for-github@v8
       env:
         INFISICAL_TOKEN: ${{ inputs.infisical-token }}
         INFISICAL_WORKSPACE_ID: ${{ inputs.infisical-workspace-id }}
         INFISICAL_ENVIRONMENT: ${{ inputs.infisical-environment }}
       with:
-        version: '0.9.6'
         verb: run
         args: deno run -A ${{ inputs.source }}
+        version: 'latest'
