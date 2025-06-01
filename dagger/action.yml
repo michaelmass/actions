@@ -27,5 +27,5 @@ runs:
         INFISICAL_ENVIRONMENT: ${{ inputs.infisical-environment }}
       with:
         verb: run
-        args: deno run -A ${{ inputs.source }}
+        args: deno run --no-lock --node-modules-dir=false -A ${{ inputs.source }}
         version: 'latest'
