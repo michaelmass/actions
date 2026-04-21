@@ -1,0 +1,16 @@
+name: Fast Checkout
+description: Increase the speed of checkouts
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Optimize Git Configuration
+      shell: bash
+      run: |
+        git config --global core.compression 0
+        git config --global http.postBuffer 1073741824
+        git config --global core.fsync -all
+    - uses: actions/checkout@v6
+      with:
+        filter: 'blob:none'
+        fetch-depth: 1
