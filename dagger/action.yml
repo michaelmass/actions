@@ -8,8 +8,8 @@ inputs:
   infisical-token:
     description: 'Infisical API token'
     required: true
-  infisical-workspace-id:
-    description: 'Infisical workspace id'
+  infisical-project-id:
+    description: 'Infisical project id'
     required: true
   infisical-environment:
     description: 'Infisical environment to get the secrets from'
@@ -18,13 +18,13 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - uses: denoland/setup-deno@v2
     - uses: dagger/dagger-for-github@8.0.0
       env:
         DAGGER_NO_NAG: '1'
         INFISICAL_TOKEN: ${{ inputs.infisical-token }}
-        INFISICAL_WORKSPACE_ID: ${{ inputs.infisical-workspace-id }}
+        INFISICAL_PROJECT_ID: ${{ inputs.infisical-project-id }}
         INFISICAL_ENVIRONMENT: ${{ inputs.infisical-environment }}
       with:
         verb: run
