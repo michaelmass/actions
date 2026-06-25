@@ -5,7 +5,7 @@ inputs:
   source:
     description: 'source file to run as the dagger pipeline'
     required: true
-  infisical-token:
+  infisical-access-token:
     description: 'Infisical API token'
     required: true
   infisical-project-id:
@@ -23,7 +23,7 @@ runs:
     - uses: dagger/dagger-for-github@8.0.0
       env:
         DAGGER_NO_NAG: '1'
-        INFISICAL_TOKEN: ${{ inputs.infisical-token }}
+        INFISICAL_ACCESS_TOKEN: ${{ inputs.infisical-access-token }}
         INFISICAL_PROJECT_ID: ${{ inputs.infisical-project-id }}
         INFISICAL_ENVIRONMENT: ${{ inputs.infisical-environment }}
       with:
